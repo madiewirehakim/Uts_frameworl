@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="nama" name="">
+	<button onclick="kirim()">Submit</button>
+
+	<div id="tampilkan"></div>
+
+
+    <script type="text/javascript">
+
+        var tamp = document.getElementById("tampilkan");
+        const waktu = new Date().getHours();
+        const menit = new Date().getMinutes();
+    
+    
+        function kirim() {
+            tamp.innerText = nama.value;
+            if (waktu >= 1 && waktu <= 11) {
+                tamp.innerText = "sekarang jam "+waktu +":"+menit+", Selamat Pagi " + nama.value;
+            }
+            else if (waktu >11 && waktu < 14){
+                tamp.innerText = "sekarang jam "+waktu +":"+menit+", Selamat Siang " + nama.value;
+            }
+            else if (waktu >= 14 && waktu <=19){
+                tamp.innerText ="sekarang jam "+waktu +":"+menit+", Selamat Sore " + nama.value;
+            }
+            else if(waktu >19 && waktu <=24){
+                tamp.innerText ="sekarang jam "+waktu +":"+menit+", Selamat Malam " + nama.value;
+            }
+        }
+        var nama = document.getElementById("nama");
+            
+    
+        
+    </script>
+</body>
+</html>

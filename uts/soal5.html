@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Apa yang kamu rasakan sekarang?</p>
+
+    <form>
+        <input type="radio" name="hewan" id="zebra" value="zebra"> zebra
+        <input type="radio" name="hewan" id="kakatua" value="kakatua"> Kakatua
+        <input type="radio" name="hewan" id="lobard" value="lobard"> Lobard
+        <input type="radio" name="hewan" id="merpati" value="lobard"> Merpati
+
+    </form>
+        <script>
+            const img = document.createElement('img');
+
+const input = document.querySelectorAll('input');
+
+const tagScript = document.querySelector('script');
+
+const appearEmoticon = (hewan = '') => {
+    img.setAttribute('src', 'img/' + hewan + '.jpg');
+    document.body.insertBefore(img, tagScript);
+};
+
+input.forEach((inp) => {
+    inp.addEventListener('click', function (event) {
+        switch (event.target.id) {
+            case 'zebra':
+                appearEmoticon(event.target.id);
+                break;
+            case 'kakatua':
+                appearEmoticon(event.target.id);
+                break;
+            case 'lobard':
+                appearEmoticon(event.target.id);
+                break;
+            case 'merpati':
+                appearEmoticon(event.target.id);
+                break;
+            
+        }
+    });
+});
+        </script>
+</body>
+
+</html>
